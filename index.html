@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waterh20 Portfolio</title>
+<style>
+  :root{
+    --bg: #ded3bd;
+    --panel: #e9e0cd;
+    --panel-edge: #c9bc9f;
+    --text: #332b1f;
+    --text-dim: #7a6f5a;
+    --accent: #6b5a34;
+    --accent-soft: #d8cba6;
+  }
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  code, .mono{ font-family: 'Consolas', 'Courier New', monospace; }
+
+  header{
+    padding: 6rem 1.5rem 4rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .eyebrow{
+    color: var(--accent);
+    font-size: 0.9rem;
+    margin: 0 0 0.75rem;
+  }
+  h1{
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    margin: 0 0 1rem;
+    letter-spacing: -0.01em;
+  }
+  header p{
+    max-width: 55ch;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+  }
+  .links{
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .links a{
+    color: var(--text);
+    text-decoration: none;
+    border: 1px solid var(--panel-edge);
+    padding: 0.6rem 1.1rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .links a:hover{
+    border-color: var(--accent);
+    background: var(--accent-soft);
+  }
+
+  main{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.5rem 5rem;
+  }
+  section{
+    margin-bottom: 4.5rem;
+  }
+  h2{
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--panel-edge);
+  }
+
+  .projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 8px;
+    padding: 1.5rem;
+  }
+  .card h3{
+    margin: 0 0 0.5rem;
+    font-size: 1.15rem;
+  }
+  .card p{
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    margin: 0 0 1rem;
+  }
+  .tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .tags span{
+    font-size: 0.78rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 0.2rem 0.55rem;
+    border-radius: 4px;
+  }
+  .card a.play{
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  .card a.play:hover{ text-decoration: underline; }
+
+  .card-video{
+    grid-column: 1 / -1;
+  }
+  .card-video img{
+    width: 100%;
+    border-radius: 6px;
+    display: block;
+    margin-bottom: 1rem;
+    background: #000;
+  }
+
+  .skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+  .skill{
+    border-left: 2px solid var(--accent);
+    padding-left: 0.9rem;
+  }
+  .skill strong{ display:block; font-size: 1rem; }
+  .skill span{ color: var(--text-dim); font-size: 0.88rem; }
+
+  footer{
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 3rem;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--panel-edge);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <p class="eyebrow mono">roblox developer</p>
+  <h1>I build systems in roblox for fun.</h1>
+  <p>Lua scripter and systems designer working in Roblox Studio — gameplay mechanics, tools, and backend logic</p>
+  <div class="links">
+  </div>
+</header>
+
+<main>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+
+      <div class="card card-video">
+        <h3>Bike-Only Area System</h3>
+        <img src="bike-area-system.gif" alt="Player walking into a zone and instantly spawning onto a bike">
+        <p>A zone that puts you on a bike the instant you walk into it — no prompt, no button. Step into the area and you're instantly riding; step out and you're back on foot.</p>
+        <div class="tags"><span>Region detection</span><span>Server logic</span><span>Vehicles</span></div>
+      </div>
+
+      <div class="card card-video">
+        <h3>Wall Cloak System</h3>
+        <img src="wall-cloak-system.gif" alt="A wall becoming transparent where it overlaps an object behind it">
+        <p>Walls that cut away in real time — when a wall moves so it's blocking an object, the overlapping part disappears so the object stays visible instead of getting hidden.</p>
+        <div class="tags"><span>Occlusion</span><span>Real-time geometry</span></div>
+      </div>
+
+      <div class="card card-video">
+        <h3>Invincible Flight & Destruction System</h3>
+        <img src="invincible-flight-destruction.gif" alt="A player flying while invincible and destroying objects in the world">
+        <p>A power-up mode that grants flight and full damage immunity, plus a destruction system that lets the player break apart objects in the world while it's active.</p>
+        <div class="tags"><span>Movement</span><span>Damage system</span><span>Destructible objects</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill"><strong>Lua / Luau</strong><span>Core scripting language</span></div>
+      <div class="skill"><strong>Server-client architecture</strong><span>RemoteEvents, RemoteFunctions</span></div>
+      <div class="skill"><strong>DataStoreService</strong><span>Player data & persistence</span></div>
+      <div class="skill"><strong>UI (Roact / vanilla)</strong><span>Interfaces & HUDs</span></div>
+      <div class="skill"><strong>Anti-exploit design</strong><span>Server-authoritative logic</span></div>
+      <div class="skill"><strong>Performance tuning</strong><span>Profiling & optimization</span></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Built for showcasing Roblox development work. Replace the placeholder text, links, and email above with your own.</p>
+</footer>
+
+</body>
+</html>
